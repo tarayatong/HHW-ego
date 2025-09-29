@@ -1,7 +1,6 @@
 # HHW-Ego Image Enhancement
 
 This repository contains code and pipeline for **HHW-Ego** image enhancement, targeting low-quality wearable ego-centric images captured by EmdoorVR and RayNeo devices. The enhancement is performed in two stages: super-resolution reconstruction and hyperspectral (HSI) color correction.
-
 ---
 
 ## Dataset
@@ -13,6 +12,8 @@ The following datasets are used in this project:
 - **HSI_data**: Hyperspectral data for color correction.  
 - **HDR_img**: High-quality images captured by a digital camera.  
 - **Glasses_img**: Aligned images obtained by structurally aligning EmdoorVR images with HDR images.
+
+**Dataset Download:** [HHW-EGO](https://pan.quark.cn/s/90dee531b04a
 
 ---
 
