@@ -26,16 +26,14 @@ This stage enhances low-quality images using super-resolution models.
 1. **General Super-Resolution**  
    - Use a general super-resolution model to reconstruct images.
 
-2. **Real-ESRGAN Enhancement**
-   - **Real-ESRGAN**: [GitHub Repository](https://github.com/xinntao/Real-ESRGAN)
-   - The full Real-ESRGAN pipeline includes:
+2. **Real-ESRGAN Enhancement** [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN)
+
    1. **High-Quality Image Degradation**  
       - Degrade HDR images to simulate low-quality inputs for training.  
       - The degradation process includes two steps:  
-        1. **Kernel Estimation with KernelGAN**
-           - **KernelGAN**: [GitHub Repository](https://github.com/sefibk/KernelGAN)
+        1. **Kernel Estimation with KernelGAN** [KernelGAN](https://github.com/sefibk/KernelGAN)
            - Generate a blur kernel for each image in `Glasses_img` to model realistic optical blur.  
-        3. **HDR Image Degradation with Real-ESRGAN's `telehyper_model.py`**  
+        2. **HDR Image Degradation with Real-ESRGAN's `telehyper_model.py`**  
            - Estimate noise parameters and apply the degradation to simulate low-quality inputs.  
       - Scripts:  
         ```bash
