@@ -32,14 +32,15 @@ This stage enhances low-quality images using super-resolution models.
    1. **High-Quality Image Degradation**  
       - Degrade HDR images to simulate low-quality inputs for training.  
       - The degradation process includes two steps:  
-        1. **Kernel Estimation with KernelGAN**  
+        1. **Kernel Estimation with KernelGAN**
+           - **KernelGAN**: [GitHub Repository](https://github.com/sefibk/KernelGAN)
            - Generate a blur kernel for each image in `Glasses_img` to model realistic optical blur.  
-        2. **HDR Image Degradation with Real-ESRGAN's `telehyper_model.py`**  
+        3. **HDR Image Degradation with Real-ESRGAN's `telehyper_model.py`**  
            - Estimate noise parameters and apply the degradation to simulate low-quality inputs.  
       - Scripts:  
         ```bash
         # Generate blur kernels for each image
-        - **KernelGAN**: [GitHub Repository](https://github.com/sefibk/KernelGAN)
+        python KernelGAN/train.py --input-dir <input_image_path>
    
         # Degrade HDR images using estimated noise parameters
         python realesrgan/models/telehyper_model.py
