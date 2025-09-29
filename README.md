@@ -1,6 +1,6 @@
 # HHW-Ego Image Enhancement
 
-This repository contains code and pipeline for **HHW-Ego** image enhancement, targeting low-quality wearable ego-centric images captured by EmdoorVR and RayNeo devices. The enhancement is performed in two stages: super-resolution reconstruction and hyperspectral (HSI) color correction.
+**This repository contains code and pipeline for **HHW-Ego** image enhancement, targeting low-quality wearable ego-centric images captured by EmdoorVR and RayNeo devices. The enhancement is performed in two stages: super-resolution reconstruction and hyperspectral (HSI) color correction.**
 ---
 
 ## Dataset
@@ -13,7 +13,7 @@ The following datasets are used in this project:
 - **HDR_img**: High-quality images captured by a digital camera.  
 - **Glasses_img**: Aligned images obtained by structurally aligning EmdoorVR images with HDR images.
 
-**Dataset Download:** [HHW-EGO](https://pan.quark.cn/s/90dee531b04a
+**Dataset Download:** [HHW-EGO](https://pan.quark.cn/s/90dee531b04a)
 
 ---
 
@@ -29,12 +29,21 @@ This stage enhances low-quality images using super-resolution models.
 2. **Real-ESRGAN Enhancement**
    - **Real-ESRGAN**: [GitHub Repository](https://github.com/xinntao/Real-ESRGAN)
    - The full Real-ESRGAN pipeline includes:
-     1. **High-Quality Image Degradation**  
-        - Degrade HDR images to simulate low-quality inputs.  
-        - Script:  
-          ```bash
-          python realesrgan/models/telehyper_model.py
-          ```
+   1. **High-Quality Image Degradation**  
+      - Degrade HDR images to simulate low-quality inputs for training.  
+      - The degradation process includes two steps:  
+        1. **Kernel Estimation with KernelGAN**  
+           - Generate a blur kernel for each image in `Glasses_img` to model realistic optical blur.  
+        2. **HDR Image Degradation with Real-ESRGAN's `telehyper_model.py`**  
+           - Estimate noise parameters and apply the degradation to simulate low-quality inputs.  
+      - Scripts:  
+        ```bash
+        # Generate blur kernels for each image
+        - **KernelGAN**: [GitHub Repository](https://github.com/sefibk/KernelGAN)
+   
+        # Degrade HDR images using estimated noise parameters
+        python realesrgan/models/telehyper_model.py
+        ```
      2. **Training / Fine-Tuning**  
         - Train or fine-tune the Real-ESRGAN model on your dataset.  
         - Script:  
