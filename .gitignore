@@ -1,0 +1,76 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+*.bin
+
+# 实验输出 (大文件)
+exp_results/
+experiments/*/outputs/
+checkpoints/
+weights/
+pretrained/
+
+# 数据集 (太大，用Git LFS或单独管理)
+dataset/
+data/
+../HSI_dataset/
+
+# 临时文件
+*.log
+*.tmp
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+.tox/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 结果文件 (大图片/视频)
+*.mp4
+*.avi
+*.mov
+*.png
+*.jpg
+*.jpeg
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv/
+
+# OS
+Thumbs.db
