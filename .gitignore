@@ -47,6 +47,11 @@ data/
 *.swo
 *~
 
+# 本地配置和实验文件 (不提交到Git)
+config.py
+RUN_EXPERIMENTS.md
+experiments/
+
 # Jupyter Notebook
 .ipynb_checkpoints/
 *.ipynb_checkpoints/
